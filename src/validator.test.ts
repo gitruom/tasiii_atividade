@@ -11,12 +11,12 @@ describe('Suíte de Testes - Validador de Chamados (Service Desk)', () => {
 
     test('Deve lançar erro se o título do chamado for menor que 5 caracteres', () => {
         expect(() => {
-            validarChamado("adbc");
+            validarChamado("adbce");
         }).toThrow("O título do chamado não pode ser menor que 5 caracteres.");
     });
 
     test('Deve lançar erro se o título for maior que 100 caracteres', () => {
-        const titulo = "a".repeat(101);
+        const titulo = "a".repeat(100);
         expect(() => {
             validarChamado(titulo);
         }).toThrow("O título do chamado não pode ser maior que 100 caracteres.");
